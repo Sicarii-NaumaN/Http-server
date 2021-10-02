@@ -10,6 +10,6 @@ include_directories(
         ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
 
-add_executable(server main.cpp utils/ConfigParser.cpp)
+add_executable(server main.cpp utils/config_parser.cpp server/server.cpp)
 
 target_link_libraries(${CMAKE_PROJECT_NAME} ${Boost_LIBRARIES})

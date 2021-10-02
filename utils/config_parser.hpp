@@ -8,19 +8,19 @@
 
 #include <string>
 
-class ConfigParser {
+class config_parser {
 public:
-    explicit ConfigParser(std::string path);
+    explicit config_parser(std::string& path);
 
-    ConfigParser() = default;
+    config_parser() = default;
 
-    ~ConfigParser() = default;
+    ~config_parser() = default;
 
-    size_t GetThreadsLimit();
+    const size_t GetThreadsLimit() const;
 
-    size_t GetMaxConn();
+    const size_t GetMaxConn() const;
 
-    std::string GetDocRoot();
+    const std::string GetDocRoot();
 
 private:
     std::size_t threads_limit{};

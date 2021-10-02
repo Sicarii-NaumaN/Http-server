@@ -5,10 +5,10 @@
 #include <iostream>
 #include <fstream>
 
-#include "ConfigParser.hpp"
+#include "config_parser.hpp"
 
 
-ConfigParser::ConfigParser(std::string path) {
+config_parser::config_parser(std::string& path) {
     std::ifstream conf_file(path, std::ifstream::in);
     std::string line;
     int pos;
@@ -44,14 +44,14 @@ ConfigParser::ConfigParser(std::string path) {
     }
 }
 
-size_t ConfigParser::GetThreadsLimit() {
+size_t const config_parser::GetThreadsLimit() const {
     return threads_limit;
 }
 
-size_t ConfigParser::GetMaxConn() {
+size_t const config_parser::GetMaxConn() const {
     return max_connections;
 }
 
-std::string ConfigParser::GetDocRoot() {
+std::string const config_parser::GetDocRoot() {
     return document_root;
 }
