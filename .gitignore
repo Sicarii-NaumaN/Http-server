@@ -6,7 +6,10 @@
 *.lo
 *.o
 *.obj
-
+.idea
+venv
+build
+cmake-build-debug
 # Precompiled Headers
 *.gch
 *.pch
