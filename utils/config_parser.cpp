@@ -27,31 +27,20 @@ config_parser::config_parser(std::string& path) {
 
         std::getline(conf_file, line);
         pos = line.find(' ');
-        std::string mConn = line.substr(pos + 1, line.length());
-        try {
-            max_connections = std::stoi(mConn);
-        }
-        catch (...) {
-            std::cerr << "Error while getting max connections\n";
-        }
-
-
-        std::getline(conf_file, line);
-        pos = line.find(' ');
         document_root = line.substr(pos + 1, line.length());
     } else {
         std::cerr << "Error while parsing\n";
     }
 }
 
-size_t const config_parser::GetThreadsLimit() const {
+size_t config_parser::GetThreadsLimit() const {
     return threads_limit;
 }
 
-size_t const config_parser::GetMaxConn() const {
+size_t config_parser::GetMaxConn() const {
     return max_connections;
 }
 
-std::string const config_parser::GetDocRoot() {
+std::string config_parser::GetDocRoot() {
     return document_root;
 }

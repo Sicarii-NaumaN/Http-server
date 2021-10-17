@@ -16,13 +16,12 @@ public:
 
     ~config_parser() = default;
 
-    const size_t GetThreadsLimit() const;
+    size_t GetThreadsLimit() const;
 
-    const size_t GetMaxConn() const;
+    size_t GetMaxConn() const;
 
-    const std::string GetDocRoot();
+    std::string GetDocRoot();
 
-private:
     std::size_t threads_limit{};
     std::size_t max_connections{};
     std::string document_root;
